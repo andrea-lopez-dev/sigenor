@@ -1,9 +1,4 @@
-# 🎓 SIGENOR - Sistema de Información para la Gestión Académica
-
-> **"Desarrollo e Implementación de un Sistema de Información para la Gestión Académica en la U.E. Nocturna Br. Rafael Rangel"**
->
-> **Universidad Politécnica Territorial de Maracaibo (UPTMA) - Trayecto III - Grupo 2**
-
+# 🎓 SIGENOR - Sistema de Información para la Gestión Académica en la U.E. Nocturna Br. Rafael Rangel"**
 <div align="center">
 
 [![SIGENOR](https://img.shields.io/badge/SIGENOR-Sistema%20de%20Gesti%C3%B3n%20Acad%C3%A9mica-brightgreen)](https://github.com/tu-usuario/sigenor)
@@ -103,6 +98,7 @@
 │       ├── MANUAL DE USUARIO FINAL.pdf
 │       └── TRIPTICO SIGENOR.pdf
 └── README.md                    # Documentación del proyecto
+```
 
 <!-- ⚙️ Características Clave -->
 <h2>⚙️ Características Clave</h2>
