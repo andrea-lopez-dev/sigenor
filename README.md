@@ -203,6 +203,3 @@ Ejecutar el servidor de desarrollo
 
 bash
 php -S localhost:8000
-
-📜 Licencia
-Este proyecto está bajo la licencia MIT. Ver archivo LICENSE para más detalles.
