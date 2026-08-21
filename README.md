@@ -1,4 +1,4 @@
-# 🎓 SIGENOR - Sistema de Información para la Gestión Académica en la U.E. Nocturna Br. Rafael Rangel"
+# 🎓 SIGENOR - Sistema de Información de Gestión Académica
 <div align="center">
 
 [![SIGENOR](https://img.shields.io/badge/SIGENOR-Sistema%20de%20Gesti%C3%B3n%20Acad%C3%A9mica-brightgreen)](https://github.com/tu-usuario/sigenor)
