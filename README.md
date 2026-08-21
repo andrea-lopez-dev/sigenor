@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/media/sigenor-demo.gif" 
+  <img src="docs/media/sigenor_demo.gif" 
        alt="Demostración del sistema SIGENOR" 
        width="700" 
        style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
