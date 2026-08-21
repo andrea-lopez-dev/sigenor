@@ -1,0 +1,18 @@
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
+
+try {
+    // Verificar si la sesión está iniciada
+    if (!session()->has('user')) {
+        session()->start();
+    }
+
+    // Obtener lista de usuarios desde la base de datos usando Eloquent
+    $usuarios = User::all();
+
+    foreach ($usuarios as $usuario) {
+        echo $usuario->nombre . "<br>";
+    }
+} catch (\Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
