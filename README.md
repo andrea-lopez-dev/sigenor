@@ -12,7 +12,7 @@
 </div>
 
 <p align="center">
-  <img src="docs/media/sigenor-logo.png" alt="Logo SIGENOR" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 20px;">
+  <img src="docs/media/logo-sistem.png" alt="Logo SIGENOR" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 20px;">
 </p>
 
 <p align="center">
@@ -236,8 +236,8 @@
 <p>Puedes consultar los manuales del sistema en la carpeta <code>docs/manuals/</code>:</p>
 
 <ul>
-  <li>📄 <a href="docs/manuals/MANUAL%20DE%20USUARIO%20FINAL.pdf"><strong>Manual de Usuario</strong></a> - Guía completa para el uso del sistema</li>
-  <li>📄 <a href="docs/manuals/TRIPTICO%20SIGENOR.pdf"><strong>Tríptico Informativo</strong></a> - Resumen visual del proyecto</li>
+  <li>📄 <a href="docs/manuals/MANUAL_SIGENOR.pdf"><strong>Manual de Usuario</strong></a> - Guía completa para el uso del sistema</li>
+  <li>📄 <a href="docs/manuals/TRIPTICOS_SIGENOR.pdf"><strong>Tríptico Informativo</strong></a> - Resumen visual del proyecto</li>
 </ul>
 
 <!-- 🛠️ Instalación y Configuración -->
