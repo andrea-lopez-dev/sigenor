@@ -1,0 +1,45 @@
+# ============================================
+# 🎓 SIGENOR - Sistema de Gestión Académica
+# Archivo de exclusión de Git
+# ============================================
+
+# --- Dependencias de Composer ---
+/vendor/
+
+# --- Archivos de entorno y configuración ---
+.env
+.env.backup
+.env.production
+
+# --- Archivos de sesión y temporales ---
+*.log
+*.tmp
+*.temp
+*.cache
+
+# --- Backups de base de datos ---
+/backup/*.sql
+/backup/*.zip
+
+# --- Archivos generados por el IDE ---
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*~
+
+# --- Archivos generados por el sistema ---
+.DS_Store
+Thumbs.db
+
+# --- Archivos de composer ---
+composer.phar
+
+# --- Archivos de configuración específicos ---
+config.php.bak
+config.php.old
+
+# --- Archivos SQL temporales o duplicados ---
+*.sql.bak
+*.sql.old
+* (1).sql
