@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SIGENOR</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('Assets/css/bootstrap-1.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('Assets/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('Assets/css/card.css') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('Assets/img/logo.png') }}">
+
+    <!-- Google Fonts & Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link href="{{ asset('Assets/DataTables/css/datatables.css') }}" rel="stylesheet">
+
+    <style>
+        .custom-alert {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1050;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            display: none;
+            max-width: 500px;
+            width: 80%;
+        }
+        .custom-alert .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Barra de perfil -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="xp-profilebar text-right">
+                    <nav class="navbar p-0">
+                        <ul class="nav navbar-nav flex-row ml-auto">   
+                            <li class="dropdown nav-item active">
+                                <a href="#" class="nav-link" data-toggle="dropdown">
+                                    <span class="material-icons">notifications</span>
+                                    <span class="notification">4</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Tienes 5 nuevos mensajes</a></li>
+                                    <li><a href="#">Ahora eres amigo de Mike</a></li>
+                                    <li><a href="#">Felicita a Mary en su cumpleaños</a></li>
+                                    <li><a href="#">5 advertencias en la consola del servidor</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" data-toggle="dropdown">
+                                    <img src="{{ asset('storage/' . Auth::user()->foto) }}" 
+                                         style="width:40px; height:40px; border-radius:50%;" />
+                                    <span class="xp-user-live"></span>
+                                </a>
+                                <ul class="dropdown-menu small-menu">
+                                    <li><a href="{{ route('profile.mostrar') }}"><span class="material-icons">person_outline</span> Perfil</a></li>
+                                    <li><a href="#"><span class="material-icons">settings</span> Configuración</a></li>
+                                    <li><a href="{{ route('logout') }}"><span class="material-icons">logout</span> Cerrar sesión</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard de datos -->
+        <div class="row">
+            @foreach([
+                ['icon' => 'sentiment_very_satisfied', 'model' => 'Estudiante', 'label' => 'Estudiantes'],
+                ['icon' => 'psychology', 'model' => 'Profesor', 'label' => 'Profesores'],
+                ['icon' => 'supervisor_account', 'model' => 'Plantel', 'label' => 'Planteles'],
+                ['icon' => 'person_outline', 'model' => 'User', 'label' => 'Usuarios']
+            ] as $card)
+                <div class="col-md-3">
+                    <div class="card-counter {{ strtolower($card['label']) }}">
+                        <i class="material-icons">{{ $card['icon'] }}</i>
+                        @php $total = \App\Models\{{ $card['model'] }}::count(); @endphp
+                        <span class="count-numbers">{{ $total }}</span>
+                        <span class="count-name">{{ $card['label'] }}</span>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        <!-- Cumpleaños recientes -->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cumpleaños Recientes</h5>
+
+                        @php
+                            $estudiantes = \App\Models\Estudiante::orderBy('cedula', 'ASC')->get();
+                        @endphp
+
+                        @foreach($estudiantes as $estudiante)
+                            @php
+                                $hoy = date("m");
+                                $fecha_cumple = $estudiante->fecha_nacimiento;
+                                $nomstu = $estudiante->nombres;
+                                
+                                $mes_cumple = date('m', strtotime($fecha_cumple));
+                            @endphp
+
+                            @if ($hoy == $mes_cumple)
+                                <span class="badge badge-success">
+                                    <strong>Feliz</strong> Cumpleaños al Estudiante {{ $nomstu }}
+                                </span>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario de subida de imágenes -->
+        <form action="{{ route('user.updateProfilePicture') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="file" name="foto" accept="image/*" onchange="previewImage(event)">
+            <button type="submit" class="btn btn-primary">Subir Foto</button>
+        </form>
+
+        <img id="profileImage" src="{{ asset('storage/' . Auth::user()->foto) }}" alt="Foto de perfil" 
+             style="width: 150px; height: 150px; border-radius: 50%;">
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                document.getElementById('profileImage').src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        setTimeout(function() {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('contenido').style.display = 'block';
+        }, 8000);
+    </script>
+
+    <script src="{{ asset('Assets/js/jquery-3.3.1.slim.min.js') }}"></script>
+    <script src="{{ asset('Assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('Assets/js/bootstrap-1.min.js') }}"></script>
+    <script src="{{ asset('Assets/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="{{ asset('Assets/js/scriptsidebar.js') }}"></script>
+</body>
+</html>
+
+
+Excelente pregunta. Vamos a **integrar todos los módulos en Laravel** de forma clara, práctica y funcional. A continuación te explico **cómo se conectan entre sí**:
+
+---
+
+## 🔧 1. **Base de datos**
+
+Laravel usa Eloquent ORM para conectarse a tu base de datos.
+Esto se configura en el archivo `.env`:
+
+```dotenv
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sigenor
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Este `.env` se usa automáticamente cuando tú haces llamadas a Eloquent como:
+
+```php
+Usuario::where('id_usuario', $id)->first();
+```
+
+---
+
+## 👤 2. **Modelo de usuario personalizado**
+
+Creamos el modelo `Usuario` para que Laravel sepa qué tabla usar en lugar de `users`:
+
+```php
+// app/Models/Usuario.php
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class Usuario extends Authenticatable
+{
+    protected $table = 'usuarios';
+    protected $primaryKey = 'id_usuario';
+    public $timestamps = false;
+
+    protected $fillable = ['name', 'foto', 'rol'];
+}
+```
+
+> ⚠️ Esto es fundamental si tu tabla de usuarios se llama `usuarios` y no `users`.
+
+---
+
+## 🧩 3. **Configuración del autenticador**
+
+Laravel usa guards para autenticar. Necesitamos decirle que use nuestro modelo:
+
+```php
+// config/auth.php
+
+'providers' => [
+    'users' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Usuario::class,
+    ],
+],
+```
+
+Esto hace que cuando tú inicies sesión, Laravel use la tabla `usuarios`.
+
+---
+
+## 🔐 4. **Autenticación de sesión**
+
+Si instalaste Laravel Breeze o Laravel UI (recomendado), ya puedes usar:
+
+```php
+Auth::user() // Devuelve el usuario logueado
+```
+
+Y proteger rutas así:
+
+```php
+Route::middleware('auth')->get('/dashboard', function () {
+    // Usuario autenticado
+});
+```
+
+Esto reemplaza todo este bloque antiguo:
+
+```php
+session_start();
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: ../home.php");
+}
+```
+
+Laravel maneja sesiones automáticamente.
+
+---
+
+## 🧑‍🎓 5. **Verificación de rol y carga de imagen**
+
+En el controlador o ruta puedes acceder al usuario y su rol:
+
+```php
+$usuario = Auth::user();
+
+if ($usuario->rol != 1) {
+    return redirect('/home');
+}
+
+$foto = $usuario->foto ?? asset('Assets/img/subidas/user.jpg');
+```
+
+---
+
+## 🌐 6. **Rutas**
+
+En `routes/web.php` defines:
+
+```php
+Route::middleware('auth')->get('/dashboard', function () {
+    $usuario = Auth::user();
+    if (!$usuario || $usuario->rol != 1) return redirect('/home');
+
+    $foto_perfil = $usuario->foto ?? asset('Assets/img/subidas/user.jpg');
+    return view('dashboard', compact('usuario', 'foto_perfil'));
+});
+```
+
+Esto reemplaza la lógica antigua PHP `if ($_SESSION['rol'] != 1)`.
+
+---
+
+## 🧾 7. **Vista Blade (`resources/views/dashboard.blade.php`)**
+
+Aquí se carga tu animación + contenido con datos del usuario:
+
+```blade
+<h2>Bienvenido, {{ $usuario->name }}</h2>
+<img src="{{ asset($foto_perfil) }}" alt="Foto de perfil">
+```
+
+La animación con CSS/JS se activa antes de mostrar `#contenido`.
+
+---
+
+## 🔁 RESUMEN VISUAL DE INTEGRACIÓN
+
+```text
+.env ➝ Configura DB
+⬇
+Usuario.php ➝ Define el modelo de usuarios
+⬇
+config/auth.php ➝ Le dice a Laravel que use el modelo Usuario
+⬇
+Middleware auth ➝ Protege rutas
+⬇
+web.php ➝ Define la lógica de acceso
+⬇
+Blade ➝ Muestra animación + datos del usuario
+```
+
+---
+
+¿Quieres que te genere un proyecto de ejemplo con esto listo para probar? También puedo entregarte los archivos organizados como ZIP para que lo uses directamente. ¿Te gustaría?
+
+
+
+
+
+
+
+
+
+
+
+
+Instalar Laravel desde **Visual Studio Code (VS Code)** es muy fácil, **siempre que tengas configurado tu entorno de desarrollo**. A continuación te explico paso a paso cómo hacerlo desde cero:
+
+---
+
+## ✅ REQUISITOS PREVIOS
+
+Asegúrate de tener instalados en tu sistema:
+
+| Herramienta        | Descripción                   | Cómo verificar                              |
+| ------------------ | ----------------------------- | ------------------------------------------- |
+| PHP ≥ 8.1          | Motor de Laravel              | `php -v` en terminal                        |
+| Composer           | Gestor de dependencias de PHP | `composer -v`                               |
+| MySQL o MariaDB    | Base de datos                 | (verifica que esté activo)                  |
+| VS Code            | Editor de código              | [Descargar](https://code.visualstudio.com/) |
+| Terminal integrada | Extensión incluida en VS Code | Usa Ctrl + \` (tilde invertida)             |
+
+---
+
+## 🧰 PASO 1: ABRE VS CODE Y UNA CARPETA BASE
+
+1. Abre **Visual Studio Code**.
+2. Haz clic en **File → Open Folder** y elige una carpeta vacía donde instalarás Laravel (por ejemplo: `C:\xampp\htdocs\sigenor`).
+
+---
+
+## 💻 PASO 2: ABRE LA TERMINAL DE VS CODE
+
+Pulsa:
+
+```plaintext
+Ctrl + `
+```
+
+Eso abre la terminal integrada.
+
+---
+
+## 📦 PASO 3: INSTALA LARAVEL EN LA CARPETA
+
+En la terminal de VS Code, escribe:
+
+```bash
+composer create-project laravel/laravel .
+```
+
+> El punto (`.`) indica que quieres instalar Laravel **en la carpeta actual**.
+
+---
+
+## ⚙️ PASO 4: CONFIGURA EL ARCHIVO `.env`
+
+1. Laravel crea un archivo `.env.example`. VS Code lo muestra como `.env`.
+2. Ábrelo y configura la conexión a tu base de datos:
+
+```dotenv
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sigenor
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+> Si usas XAMPP o Laragon, esos son los valores por defecto.
+
+---
+
+## ▶️ PASO 5: INICIA EL SERVIDOR LARAVEL
+
+En la misma terminal de VS Code:
+
+```bash
+php artisan serve
+```
+
+Abre tu navegador y visita:
+
+👉 [http://localhost:8000](http://localhost:8000)
+
+Verás la página de bienvenida de Laravel 🎉
+
+---
+
+## 📁 ESTRUCTURA DE ARCHIVOS QUE DEBES CONOCER
+
+| Carpeta                | Función                                          |
+| ---------------------- | ------------------------------------------------ |
+| `app/Models`           | Tus modelos (como `Usuario.php`)                 |
+| `routes/web.php`       | Aquí defines tus rutas web                       |
+| `resources/views`      | Aquí van tus vistas (con extensión `.blade.php`) |
+| `app/Http/Controllers` | Tus controladores PHP                            |
+| `public/Assets`        | Aquí colocas tus CSS, JS e imágenes              |
+
+---
+
+## 🧪 ¿CÓMO PROBARLO?
+
+Crea una ruta simple en `routes/web.php`:
+
+```php
+Route::get('/prueba', function () {
+    return 'Laravel funciona en VS Code 🚀';
+});
+```
+
+Luego visita: [http://localhost:8000/prueba](http://localhost:8000/prueba)
+
+---
+
+## ❓¿Y si me da error?
+
+Aquí algunos tips comunes:
+
+| Error                        | Solución                                                         |
+| ---------------------------- | ---------------------------------------------------------------- |
+| `php` no reconocido          | Agrega PHP al PATH de tu sistema                                 |
+| `composer` no reconocido     | Instala Composer y reinicia VS Code                              |
+| `403 Forbidden` en navegador | Asegúrate de usar `php artisan serve`, no solo abrir el archivo  |
+| `.env` no cargado            | Copia `.env.example` a `.env` y corre `php artisan config:cache` |
+
+---
+
+¿Quieres que te cree una estructura básica para tu login o panel desde VS Code con Laravel? Solo dime y te doy el código base paso a paso.
+
