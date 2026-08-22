@@ -73,32 +73,31 @@
 
 ```text
 /
-├── Assets/
-│   ├── css/                     # Hojas de estilo personalizadas
-│   ├── js/                      # Scripts de JavaScript personalizados
-│   └── images/                  # Imágenes y logotipos institucionales
-├── backup/                      # Archivos de respaldo de la base de datos
-├── Config/                      # Configuración del sistema
-├── logs/                        # Registros de actividad y errores
-├── php/                         # Lógica de negocio en PHP
-│   ├── Models/                  # Modelos de datos
-│   ├── Controllers/             # Controladores (MVC)
-│   └── Views/                   # Vistas (HTML, CSS, JS)
-├── vendor/                      # Dependencias de Composer
-├── Views/                       # Vistas principales del sistema
-├── .htaccess                    # Configuración del servidor Apache
-├── composer.json                # Dependencias de PHP
-├── composer.lock                # Bloqueo de versiones
-├── index.php                    # Punto de entrada principal
-├── sigenor.sql              # Script de la base de datos MySQL
+├── ajax/                         # Peticiones asíncronas (JavaScript/AJAX)
+├── Animated Product Card/        # Animaciones y recursos gráficos
+├── assets/                       # Recursos estáticos (imágenes, íconos)
+├── config/                       # Configuración del sistema (Conexión BD)
+├── css/                          # Hojas de estilo personalizadas
+├── files/                        # Archivos subidos por el sistema
+├── fpdf181/                      # Librería FPDF (Generación de PDF)
+├── img/                          # Imágenes generales de la interfaz
+├── js/                           # Scripts de JavaScript personalizados
+├── modelos/                      # Modelos de datos (MVC)
+├── public/                       # Archivos públicos accesibles
+├── reportes/                     # Lógica de generación de reportes (TCPDF)
+├── vistas/                       # Vistas (HTML, PHP, CSS, JS)
+├── index.php                     # Punto de entrada principal
+├── login.html                    # Vista de inicio de sesión
+├── siep.sql                      # Script de la base de datos MySQL
 ├── docs/
 │   ├── media/
-│   │   ├── sigenor-logo.png     # Logo del proyecto
-│   │   └── sigenor-demo.gif     # GIF de demostración
+│   │   ├── logo_siep.png         # Logo del proyecto
+│   │   └── siep_demo.gif         # GIF de demostración
 │   └── manuals/
 │       ├── MANUAL DE USUARIO FINAL.pdf
-│       └── TRIPTICO SIGENOR.pdf
-└── README.md                    # Documentación del proyecto
+│       └── TRIPTICO SIEP.pdf
+├── LICENSE                       # Licencia MIT del proyecto
+└── README.md                     # Documentación del proyecto
 ```
 
 <!-- ⚙️ Características Clave -->
