@@ -92,8 +92,8 @@
 ├── sigenor.sql                  # Script de la base de datos MySQL
 ├── docs/
 │   ├── media/
-│   │   ├── sigenor-logo.png     # Logo del proyecto
-│   │   └── sigenor-demo.gif     # GIF de demostración
+│   │   ├── logo_sistem.png     # Logo del proyecto
+│   │   └── sigenor_demo.gif     # GIF de demostración
 │   └── manuals/
 │       ├── MANUAL_DE_USUARIO_FINAL.pdf
 │       └── TRIPTICO_SIGENOR.pdf
