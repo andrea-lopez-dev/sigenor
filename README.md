@@ -12,7 +12,7 @@
 </div>
 
 <p align="center">
-  <img src="docs/media/logo-sistem.png" alt="Logo SIGENOR" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 20px;">
+  <img src="docs/media/logo_sistem.png" alt="Logo SIGENOR" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 20px;">
 </p>
 
 <p align="center">
