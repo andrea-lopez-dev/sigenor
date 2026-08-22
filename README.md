@@ -83,7 +83,7 @@
 ├── php/                         # Lógica de negocio en PHP
 │   ├── Models/                  # Modelos de datos
 │   ├── Controllers/             # Controladores (MVC)
-│   └── Views/                   # Vistas (HTML, CSS, JS)
+│   └── Views/                   # Vistas
 ├── Views/                       # Vistas principales del sistema
 ├── .htaccess                    # Configuración del servidor Apache
 ├── composer.json                # Dependencias de PHP
