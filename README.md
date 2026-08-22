@@ -1,4 +1,9 @@
 # 🎓 SIGENOR - Sistema de Información de Gestión Académica (SGA)
+
+<p align="center">
+  <img src="docs/media/logo_sistem.png" alt="Logo SIGENOR" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 20px;">
+</p>
+
 <div align="center">
 
 [![SIGENOR](https://img.shields.io/badge/SIGENOR-Sistema%20de%20Gesti%C3%B3n%20Acad%C3%A9mica-brightgreen)](https://github.com/tu-usuario/sigenor)
@@ -10,10 +15,6 @@
 [![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 
 </div>
-
-<p align="center">
-  <img src="docs/media/logo_sistem.png" alt="Logo SIGENOR" width="200" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 20px;">
-</p>
 
 <p align="center">
   <img src="docs/media/sigenor_demo.gif" 
