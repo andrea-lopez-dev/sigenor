@@ -96,7 +96,7 @@
 │   │   └── sigenor_demo.gif     # GIF de demostración
 │   └── manuals/
 │       ├── MANUAL_SIGENOR.pdf
-│       └── TRIPTICO_SIGENOR.pdf
+│       └── TRIPTICOS_SIGENOR.pdf
 ├── LICENSE                      # Licencia MIT del proyecto
 └── README.md                    # Documentación del proyecto
 ```
