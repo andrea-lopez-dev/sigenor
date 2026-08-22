@@ -95,7 +95,7 @@
 │   │   ├── logo_sistem.png     # Logo del proyecto
 │   │   └── sigenor_demo.gif     # GIF de demostración
 │   └── manuals/
-│       ├── MANUAL_DE_USUARIO_FINAL.pdf
+│       ├── MANUAL_SIGENOR.pdf
 │       └── TRIPTICO_SIGENOR.pdf
 ├── LICENSE                      # Licencia MIT del proyecto
 └── README.md                    # Documentación del proyecto
