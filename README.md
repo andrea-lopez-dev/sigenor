@@ -90,7 +90,7 @@
 ├── composer.json                # Dependencias de PHP
 ├── composer.lock                # Bloqueo de versiones
 ├── index.php                    # Punto de entrada principal
-├── sigenor (1).sql              # Script de la base de datos MySQL
+├── sigenor.sql              # Script de la base de datos MySQL
 ├── docs/
 │   ├── media/
 │   │   ├── sigenor-logo.png     # Logo del proyecto
@@ -305,7 +305,7 @@ DB_PASSWORD=
 
 <p><strong>Importar la base de datos</strong></p>
 
-<pre><code>mysql -u root -p sigenor &lt; "sigenor (1).sql"
+<pre><code>mysql -u root -p sigenor &lt; "sigenor.sql"
 </code></pre>
 
 <p><strong>Ejecutar el servidor de desarrollo</strong></p>
