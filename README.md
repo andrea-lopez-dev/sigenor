@@ -332,6 +332,5 @@ La implementación del sistema SIGENOR ha producido una transformación sustanci
 *  Fortalecimiento del Poder Popular al dotar a la comunidad de una herramienta tecnológica de vanguardia.
 
 ## 📜 Licencia
-Distribuido bajo la licencia MIT.
 
-📄 Ver archivo LICENSE para más detalles.
+📄 **Ver archivo [LICENSE](LICENSE) para más detalles.**
