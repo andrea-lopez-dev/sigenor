@@ -96,76 +96,169 @@
 └── README.md                    # Documentación del proyecto
 ---
 
-⚙️ Características Clave
+## ⚙️ Características Clave
 
-🔐 Módulos Implementados
+### 🔐 Módulos Implementados
 
-<table align="center"> <thead> <tr> <th>Módulo</th> <th>Descripción</th> <th>Funcionalidades</th> </tr> </thead> <tbody> <tr> <td><strong>Usuarios</strong></td> <td>Gestión de accesos al sistema</td> <td>CRUD completo, control de permisos, autenticación segura</td> </tr> <tr> <td><strong>Estudiantes</strong></td> <td>Registro y gestión de alumnos</td> <td>CRUD, filtros por cédula/sección/sexo, historial de planteles</td> </tr> <tr> <td><strong>Profesores</strong></td> <td>Gestión de docentes</td> <td>CRUD, asignación de asignaturas, datos de contacto</td> </tr> <tr> <td><strong>Planteles</strong></td> <td>Instituciones educativas asociadas</td> <td>CRUD, información de directores y zonas educativas</td> </tr> <tr> <td><strong>Periodos</strong></td> <td>Ciclos académicos</td> <td>CRUD, control de fechas de inicio/fin</td> </tr> <tr> <td><strong>Secciones</strong></td> <td>Grupos escolares</td> <td>CRUD, asignación a periodos, control de capacidad</td> </tr> <tr> <td><strong>Asignaturas</strong></td> <td>Materias del plan de estudio</td> <td>CRUD, asignación a profesores</td> </tr> <tr> <td><strong>Asistencias</strong></td> <td>Registro de presencia</td> <td>CRUD, control de inasistencias, vinculación a estudiantes</td> </tr> <tr> <td><strong>Calificaciones</strong></td> <td>Notas académicas</td> <td>CRUD, conversión automática escala 1-20 a 1-5</td> </tr> <tr> <td><strong>Plan Administrativo</strong></td> <td>Configuración institucional</td> <td>CRUD, tipos de evaluación, estrategias de estudio</td> </tr> <tr> <td><strong>Dashboard</strong></td> <td>Panel de control</td> <td>Estadísticas, gráficos, indicadores en tiempo real</td> </tr> <tr> <td><strong>Reportes PDF</strong></td> <td>Documentos oficiales</td> <td>Boletines, certificados, resúmenes curriculares</td> </tr> </tbody> </table>
+<table align="center">
+  <thead>
+    <tr>
+      <th>Módulo</th>
+      <th>Descripción</th>
+      <th>Funcionalidades</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Usuarios</strong></td>
+      <td>Gestión de accesos al sistema</td>
+      <td>CRUD completo, control de permisos, autenticación segura</td>
+    </tr>
+    <tr>
+      <td><strong>Estudiantes</strong></td>
+      <td>Registro y gestión de alumnos</td>
+      <td>CRUD, filtros por cédula/sección/sexo, historial de planteles</td>
+    </tr>
+    <tr>
+      <td><strong>Profesores</strong></td>
+      <td>Gestión de docentes</td>
+      <td>CRUD, asignación de asignaturas, datos de contacto</td>
+    </tr>
+    <tr>
+      <td><strong>Planteles</strong></td>
+      <td>Instituciones educativas asociadas</td>
+      <td>CRUD, información de directores y zonas educativas</td>
+    </tr>
+    <tr>
+      <td><strong>Periodos</strong></td>
+      <td>Ciclos académicos</td>
+      <td>CRUD, control de fechas de inicio/fin</td>
+    </tr>
+    <tr>
+      <td><strong>Secciones</strong></td>
+      <td>Grupos escolares</td>
+      <td>CRUD, asignación a periodos, control de capacidad</td>
+    </tr>
+    <tr>
+      <td><strong>Asignaturas</strong></td>
+      <td>Materias del plan de estudio</td>
+      <td>CRUD, asignación a profesores</td>
+    </tr>
+    <tr>
+      <td><strong>Asistencias</strong></td>
+      <td>Registro de presencia</td>
+      <td>CRUD, control de inasistencias, vinculación a estudiantes</td>
+    </tr>
+    <tr>
+      <td><strong>Calificaciones</strong></td>
+      <td>Notas académicas</td>
+      <td>CRUD, conversión automática escala 1-20 a 1-5</td>
+    </tr>
+    <tr>
+      <td><strong>Plan Administrativo</strong></td>
+      <td>Configuración institucional</td>
+      <td>CRUD, tipos de evaluación, estrategias de estudio</td>
+    </tr>
+    <tr>
+      <td><strong>Dashboard</strong></td>
+      <td>Panel de control</td>
+      <td>Estadísticas, gráficos, indicadores en tiempo real</td>
+    </tr>
+    <tr>
+      <td><strong>Reportes PDF</strong></td>
+      <td>Documentos oficiales</td>
+      <td>Boletines, certificados, resúmenes curriculares</td>
+    </tr>
+  </tbody>
+</table>
 
-📄 Documentos Generados con TCPDF
+### 📄 Documentos Generados con TCPDF
 
-Boletín de Calificaciones (Formato EMGMJAA)
+*   **Boletín de Calificaciones** (Formato EMGMJAA)
+*   **Certificado de Calificaciones** (Formato EMGMJAA)
+*   **Resumen Curricular** por estudiante
+*   **Listado de Estudiantes** por sección/periodo
+*   **Reporte de Asistencias e Inasistencias**
+*   **Reporte de Profesores** y asignaturas asignadas
+*   **Reporte de Asignaturas** del plan de estudio
 
-Certificado de Calificaciones (Formato EMGMJAA)
+### 🔒 Validaciones y Seguridad Implementadas
 
-Resumen Curricular por estudiante
+*   **Validación de unicidad de cédula:** Verificación automática en el registro de estudiantes mediante consultas SQL.
+*   **Cálculo automático de estados académicos:** Conteo de aprobados, reprobados, inasistentes y no evaluados.
+*   **Filtros de búsqueda avanzados:** Búsqueda por cédula, nombres, apellidos, plantel, sección y sexo en tiempo real.
+*   **Historial académico enlazado:** Vinculación automática de calificaciones, fechas, periodos y asignaturas al perfil del estudiante.
+*   **Control de sesiones:** Autenticación y acceso restringido por roles.
 
-Listado de Estudiantes por sección/periodo
+---
 
-Reporte de Asistencias e Inasistencias
+## 📊 Progreso del Proyecto
 
-Reporte de Profesores y asignaturas asignadas
+| Módulo | Estado | Avance |
+|--------|--------|--------|
+| **Análisis de Requisitos** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Diseño del Sistema (Base de Datos)** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Diseño de Interfaz (Wireframes)** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Módulo de Usuarios (CRUD)** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Módulo de Estudiantes (CRUD)** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Módulo de Profesores (CRUD)** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Módulo de Planteles (CRUD)** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Módulo de Periodos (CRUD)** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Módulo de Secciones (CRUD)** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Módulo de Asignaturas (CRUD)** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Módulo de Asistencias (CRUD)** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Módulo de Calificaciones (CRUD)** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Generación de Reportes PDF (TCPDF)** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Dashboard y Estadísticas** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Implementación y Despliegue** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Capacitación del Personal** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
+| **Mantenimiento y Soporte** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
 
-Reporte de Asignaturas del plan de estudio
+---
 
-🔒 Validaciones y Seguridad Implementadas
+## 📚 Documentación y Manuales
 
-Validación de unicidad de cédula: Verificación automática en el registro de estudiantes mediante consultas SQL.
+Puedes consultar los manuales del sistema en la carpeta `docs/manuals/`:
 
-Cálculo automático de estados académicos: Conteo de aprobados, reprobados, inasistentes y no evaluados.
+*   📄 [Manual de Usuario](docs/manuals/MANUAL_SIGENOR.pdf)
+*   📄 [Tríptico Informativo](docs/manuals/TRIPTICOS_SIGENOR.pdf)
 
-Filtros de búsqueda avanzados: Búsqueda por cédula, nombres, apellidos, plantel, sección y sexo en tiempo real.
+---
 
-Historial académico enlazado: Vinculación automática de calificaciones, fechas, periodos y asignaturas al perfil del estudiante.
+## 🛠️ Instalación y Configuración
 
-Control de sesiones: Autenticación y acceso restringido por roles.
+### Requisitos Previos
 
-📊 Progreso del Proyecto
+<table align="center">
+  <thead>
+    <tr>
+      <th>Requisito</th>
+      <th>Versión</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PHP</strong></td>
+      <td>8.2 o superior</td>
+    </tr>
+    <tr>
+      <td><strong>Composer</strong></td>
+      <td>2.x</td>
+    </tr>
+    <tr>
+      <td><strong>MySQL</strong></td>
+      <td>8.0 o superior</td>
+    </tr>
+    <tr>
+      <td><strong>Servidor Web</strong></td>
+      <td>Apache/Nginx (XAMPP, WAMP o Laragon recomendados)</td>
+    </tr>
+  </tbody>
+</table>
 
-Módulo	Estado	Avance
-Análisis de Requisitos	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Diseño del Sistema (Base de Datos)	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Diseño de Interfaz (Wireframes)	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Módulo de Usuarios (CRUD)	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Módulo de Estudiantes (CRUD)	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Módulo de Profesores (CRUD)	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Módulo de Planteles (CRUD)	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Módulo de Periodos (CRUD)	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Módulo de Secciones (CRUD)	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Módulo de Asignaturas (CRUD)	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Módulo de Asistencias (CRUD)	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Módulo de Calificaciones (CRUD)	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Generación de Reportes PDF (TCPDF)	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Dashboard y Estadísticas	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Implementación y Despliegue	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Capacitación del Personal	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-Mantenimiento y Soporte	✅ Completado	https://img.shields.io/badge/-100%2525-brightgreen
-
-📚 Documentación y Manuales
-Puedes consultar los manuales del sistema en la carpeta docs/manuals/:
-
-📄 Manual de Usuario
-📄 Tríptico Informativo
-
-🛠️ Instalación y Configuración
-
-Requisitos Previos
-<table align="center"> <thead> <tr> <th>Requisito</th> <th>Versión</th> </tr> </thead> <tbody> <tr> <td><strong>PHP</strong></td> <td>8.2 o superior</td> </tr> <tr> <td><strong>Composer</strong></td> <td>2.x</td> </tr> <tr> <td><strong>MySQL</strong></td> <td>8.0 o superior</td> </tr> <tr> <td><strong>Servidor Web</strong></td> <td>Apache/Nginx (XAMPP, WAMP o Laragon recomendados)</td> </tr> </tbody> </table>
-
-##Pasos de Instalación
+### Pasos de Instalación
 
 **1. Clonar el repositorio**
-
 
 ```bash
 git clone https://github.com/<tu-usuario>/sigenor.git
