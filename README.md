@@ -35,7 +35,7 @@
 - [📂 Estructura del Proyecto](#-estructura-del-proyecto)
 - [⚙️ Características Clave](#️-características-clave)
 - [📊 Progreso del Proyecto](#-progreso-del-proyecto)
-- [📚 Documentación y Manuales](#-documentación-y-manuales)
+- [📚 Documentación](#-documentación-y-manuales)
 - [🛠️ Instalación y Configuración](#️-instalación-y-configuración)
 - [🧪 Pruebas](#-pruebas)
 - [🎯 Impacto Social](#-impacto-social)
