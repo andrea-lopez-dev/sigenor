@@ -189,7 +189,6 @@
 *   **Filtros de búsqueda avanzados:** Búsqueda por cédula, nombres, apellidos, plantel, sección y sexo en tiempo real.
 *   **Historial académico enlazado:** Vinculación automática de calificaciones, fechas, periodos y asignaturas al perfil del estudiante.
 *   **Control de sesiones:** Autenticación y acceso restringido por roles.
-
 ---
 
 ## 📊 Progreso del Proyecto
@@ -221,7 +220,6 @@ Puedes consultar los manuales del sistema en la carpeta `docs/manuals/`:
 
 *   📄 [Manual de Usuario](docs/manuals/MANUAL_SIGENOR.pdf)
 *   📄 [Tríptico Informativo](docs/manuals/TRIPTICOS_SIGENOR.pdf)
-
 ---
 
 ## 🛠️ Instalación y Configuración
