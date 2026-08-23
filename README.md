@@ -40,12 +40,12 @@
 - [🧪 Pruebas](#-pruebas)
 - [🎯 Impacto Social](#-impacto-social)
 - [📜 Licencia](#-licencia)
-```
+
 
 ## 📖 Descripción General
 
 **SIGENOR** es un sistema de información web diseñado e implementado para modernizar y optimizar los procesos académicos y administrativos de la **Unidad Educativa Nocturna "Br. Rafael Rangel"**. Este sistema surge como respuesta a las limitaciones de la gestión manual basada en hojas de cálculo (Excel), ofreciendo una plataforma centralizada, segura y escalable que automatiza tareas críticas como la gestión de estudiantes, docentes, asignaturas, calificaciones, asistencias y la generación de documentos oficiales.
-```
+
 
 ## 🚀 Stack Tecnológico
 
@@ -58,7 +58,7 @@
 | **Arquitectura** | Cliente-Servidor + MVC |
 | **Metodología** | Waterfall (Modelo en Cascada) |
 | **Seguridad** | Autenticación por Sesiones y Control de Roles |
-```
+
 
 ## 📂 Estructura del Proyecto
 
