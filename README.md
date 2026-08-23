@@ -1,4 +1,4 @@
-# 🎓 SIGENOR - Sistema de Información de Gestión Académica
+# 🎓 SIGENOR - Sistema de Información de Gestión Académica (SGA)
 
 <p align="center">
   <img src="docs/media/logo_sistem.png" alt="Logo SIGENOR" width="180" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 20px;">
@@ -213,7 +213,6 @@
 | **Implementación y Despliegue** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
 | **Capacitación del Personal** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
 | **Mantenimiento y Soporte** | ✅ Completado | ![100%](https://img.shields.io/badge/-100%25-brightgreen) |
-
 ---
 
 ## 📚 Documentación y Manuales
