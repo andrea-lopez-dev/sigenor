@@ -26,8 +26,7 @@
        width="900" 
        style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
 </p>
-
----
+```
 
 ## 📑 Índice
 
@@ -41,14 +40,12 @@
 - [🧪 Pruebas](#-pruebas)
 - [🎯 Impacto Social](#-impacto-social)
 - [📜 Licencia](#-licencia)
-
----
+```
 
 ## 📖 Descripción General
 
 **SIGENOR** es un sistema de información web diseñado e implementado para modernizar y optimizar los procesos académicos y administrativos de la **Unidad Educativa Nocturna "Br. Rafael Rangel"**. Este sistema surge como respuesta a las limitaciones de la gestión manual basada en hojas de cálculo (Excel), ofreciendo una plataforma centralizada, segura y escalable que automatiza tareas críticas como la gestión de estudiantes, docentes, asignaturas, calificaciones, asistencias y la generación de documentos oficiales.
-
----
+```
 
 ## 🚀 Stack Tecnológico
 
@@ -61,8 +58,7 @@
 | **Arquitectura** | Cliente-Servidor + MVC |
 | **Metodología** | Waterfall (Modelo en Cascada) |
 | **Seguridad** | Autenticación por Sesiones y Control de Roles |
-
----
+```
 
 ## 📂 Estructura del Proyecto
 
@@ -94,7 +90,8 @@
 │       └── TRIPTICOS_SIGENOR.pdf
 ├── LICENSE                      # Licencia MIT del proyecto
 └── README.md                    # Documentación del proyecto
----
+```
+
 
 ## ⚙️ Características Clave
 
@@ -172,6 +169,7 @@
   </tbody>
 </table>
 
+
 ### 📄 Documentos Generados con TCPDF
 
 *   **Boletín de Calificaciones** (Formato EMGMJAA)
@@ -182,6 +180,7 @@
 *   **Reporte de Profesores** y asignaturas asignadas
 *   **Reporte de Asignaturas** del plan de estudio
 
+
 ### 🔒 Validaciones y Seguridad Implementadas
 
 *   **Validación de unicidad de cédula:** Verificación automática en el registro de estudiantes mediante consultas SQL.
@@ -189,7 +188,7 @@
 *   **Filtros de búsqueda avanzados:** Búsqueda por cédula, nombres, apellidos, plantel, sección y sexo en tiempo real.
 *   **Historial académico enlazado:** Vinculación automática de calificaciones, fechas, periodos y asignaturas al perfil del estudiante.
 *   **Control de sesiones:** Autenticación y acceso restringido por roles.
----
+
 
 ## 📊 Progreso del Proyecto
 
@@ -220,7 +219,7 @@ Puedes consultar los manuales del sistema en la carpeta `docs/manuals/`:
 
 *   📄 [Manual de Usuario](docs/manuals/MANUAL_SIGENOR.pdf)
 *   📄 [Tríptico Informativo](docs/manuals/TRIPTICOS_SIGENOR.pdf)
----
+
 
 ## 🛠️ Instalación y Configuración
 
@@ -259,25 +258,25 @@ Puedes consultar los manuales del sistema en la carpeta `docs/manuals/`:
 
 ```bash
 git clone https://github.com/<tu-usuario>/sigenor.git
----
+```
 
 ```bash
 cd sigenor
----
+```
 
 **2. Instalar dependencias**
 
 
 ```bash
 composer install
----
+```
 
 **3. Configurar el entorno**
 
 
 ```bash
 cp .env.example .env
----
+```
 
 **4. Configurar la base de datos**
 
@@ -292,46 +291,47 @@ DB_PORT=3306
 DB_DATABASE=sigenor
 DB_USERNAME=root
 DB_PASSWORD=
----
+```
 
 **5. Importar la base de datos**
 
 ```bash
 mysql -u root -p sigenor < "sigenor.sql"
----
+```
 
 **6. Ejecutar el servidor de desarrollo**
 
 ```bash
 php -S localhost:8000
----
+```
 
-🧪 Pruebas
+## 🧪 Pruebas
 
 El sistema fue sometido a un riguroso proceso de validación:
 
-Pruebas Unitarias: Validación de funciones individuales por módulo.
+*  Pruebas Unitarias: Validación de funciones individuales por módulo.
 
-Pruebas de Integración: Comunicación entre componentes (Estudiantes, Calificaciones, Asistencias).
+*  Pruebas de Integración: Comunicación entre componentes (Estudiantes, Calificaciones, Asistencias).
 
-Pruebas de Sistema: Flujo completo desde el login hasta la generación de reportes.
+*  Pruebas de Sistema: Flujo completo desde el login hasta la generación de reportes.
 
-Pruebas de Aceptación: Validación con usuarios reales del personal administrativo.
+*  Pruebas de Aceptación: Validación con usuarios reales del personal administrativo.
 
-🎯 Impacto Social
+## 🎯 Impacto Social
+
 La implementación del sistema SIGENOR ha producido una transformación sustancial en la dinámica operativa de la institución:
 
-Reducción drástica de los tiempos de espera para la generación de documentos.
+*  Reducción drástica de los tiempos de espera para la generación de documentos.
 
-Trazabilidad digital completa de cada estudiante y su historial académico.
+*  Trazabilidad digital completa de cada estudiante y su historial académico.
 
-Protección de datos sensibles de los estudiantes y personal.
+*  Protección de datos sensibles de los estudiantes y personal.
 
-Posicionamiento institucional como una instancia moderna, eficiente y ambientalmente responsable (menor uso de papel).
+*  Posicionamiento institucional como una instancia moderna, eficiente y ambientalmente responsable (menor uso de papel).
 
-Fortalecimiento del Poder Popular al dotar a la comunidad de una herramienta tecnológica de vanguardia.
+*  Fortalecimiento del Poder Popular al dotar a la comunidad de una herramienta tecnológica de vanguardia.
 
-📜 Licencia
+## 📜 Licencia
 Distribuido bajo la licencia MIT.
 
 📄 Ver archivo LICENSE para más detalles.
